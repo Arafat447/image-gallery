@@ -1,11 +1,18 @@
+import { DndProvider } from 'react-dnd';
+import './App.css';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import Gallery from './components/Gallery';
+// import { Container } from './components/Container';
 
 function App() {
-
   return (
-    <>
-      <h1 className="text-3xl font-bold">This is our image gallery</h1>
-    </>
-  )
+    <div className='p-0 lg:p-2 flex justify-center items-center'>
+      {/* <Container /> */}
+      <DndProvider debugMode={true} backend={HTML5Backend}>
+        <Gallery />
+      </DndProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;
